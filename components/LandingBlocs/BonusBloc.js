@@ -8,7 +8,7 @@ export default function BonusBloc({ theRef }) {
     <Wrapper ref={theRef}>
       <section>
         <h2>
-          Un petit bonus : découvrez les séquenceurs euclidiens{" "}
+          Un petit bonus : découvrez les rythmes euclidiens{" "}
           <Boop rotation={15}>
             <span className="lnr lnr-question-circle" />
           </Boop>

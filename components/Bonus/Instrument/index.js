@@ -38,7 +38,7 @@ export default function Bonus({ name }) {
       }
       // If the current step is in the sequencer, play it
       if (steps.current.indexOf(currentStep.current) !== -1) {
-        // synth.triggerAttackRelease("C3", "2n");
+        synth.triggerAttackRelease("C3", "2n");
       }
     }, "16n");
   }, []);

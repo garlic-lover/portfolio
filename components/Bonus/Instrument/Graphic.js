@@ -11,13 +11,16 @@ export default function Graphic({
   const polygon = useRef(null);
   const stepsRef = useRef(steps.current);
   const clockRef = useRef(0);
+  const scopeRef = useRef(null);
 
   useEffect(async () => {
-    const canvas = await document.querySelector(`#${name}`);
+    const scope = new paper.PaperScope();
 
-    paper.setup(canvas);
+    scopeRef.current = scope;
 
     let circlesArray = [];
+    const canvas = await document.querySelector(`#${name}`);
+    scopeRef.current.setup(canvas);
 
     function polygonGenerate() {
       // Clear the polygon and circles
@@ -30,7 +33,7 @@ export default function Graphic({
       circlesArray = [];
 
       // Creates the regulate polygon
-      polygon.current = new Path.RegularPolygon(
+      polygon.current = new scopeRef.current.Path.RegularPolygon(
         new Point(150, 150),
         segmentsAmountRef.current,
         130
@@ -39,7 +42,7 @@ export default function Graphic({
 
       // From the segments, create the circles
       for (const { point } of polygon.current.segments) {
-        let newCircle = new Path.Circle(point, 10);
+        let newCircle = new scopeRef.current.Path.Circle(point, 10);
         newCircle.strokeColor = "tomato";
         circlesArray.push(newCircle);
       }
@@ -63,7 +66,6 @@ export default function Graphic({
     }
 
     function currentStepFill() {
-      console.log(circlesArray.length, currentStep.current);
       stepsCirclesFill();
       circlesArray[currentStep.current].fillColor = "green";
       clockRef.current = currentStep.current;
@@ -71,22 +73,19 @@ export default function Graphic({
 
     polygonGenerate();
 
-    paper.view.onFrame = (ev) => {
+    scopeRef.current.view.onFrame = (ev) => {
       // Resize the polygon if necessary
       if (segmentsAmountRef.current !== polygon.current.segments.length) {
         polygonGenerate();
       }
-
       // Place the colors in the active steps
       if (stepsRef.current !== steps.current) {
         stepsCirclesFill();
       }
-
       // Color the current step
       if (clockRef.current !== currentStep.current) {
         currentStepFill();
       }
-
       // polygon.current.rotate(1);
     };
   }, []);
@@ -97,7 +96,7 @@ export default function Graphic({
 const Wrapper = styled.canvas`
   width: 300px;
   height: 300px;
-  border: solid 1px ${(props) => props.theme.background};
+  // border: solid 1px ${(props) => props.theme.background};
   margin: auto;
   display: block;
   z-index: -1;
