@@ -3,7 +3,7 @@ import styled from "styled-components";
 import paper, { Path, Point } from "paper";
 
 export default function Graphic({
-  name,
+  theIndex,
   segmentsAmountRef,
   steps,
   currentStep,
@@ -19,7 +19,7 @@ export default function Graphic({
     scopeRef.current = scope;
 
     let circlesArray = [];
-    const canvas = await document.querySelector(`#${name}`);
+    const canvas = await document.querySelector(`#canva${theIndex}`);
     scopeRef.current.setup(canvas);
 
     function polygonGenerate() {
@@ -34,16 +34,16 @@ export default function Graphic({
 
       // Creates the regulate polygon
       polygon.current = new scopeRef.current.Path.RegularPolygon(
-        new Point(150, 150),
+        new Point(120, 120),
         segmentsAmountRef.current,
-        130
+        90
       );
-      // polygon.current.strokeColor = "tomato";
+      polygon.current.strokeColor = "#f6f5f5";
 
       // From the segments, create the circles
       for (const { point } of polygon.current.segments) {
         let newCircle = new scopeRef.current.Path.Circle(point, 10);
-        newCircle.strokeColor = "tomato";
+        newCircle.strokeColor = "#f6f5f5";
         circlesArray.push(newCircle);
       }
       stepsCirclesFill();
@@ -90,13 +90,14 @@ export default function Graphic({
     };
   }, []);
 
-  return <Wrapper id={name} />;
+  return <Wrapper id={`canva${theIndex}`} />;
 }
 
 const Wrapper = styled.canvas`
-  width: 300px;
-  height: 300px;
-  // border: solid 1px ${(props) => props.theme.background};
+  width: 240px;
+  height: 240px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 7px;
   margin: auto;
   display: block;
   z-index: -1;
