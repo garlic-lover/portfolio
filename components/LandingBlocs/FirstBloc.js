@@ -1,9 +1,12 @@
+import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 
 export default function FirstBloc({
   scroll: { scrollToAbout, scrollToProjects, scrollToContact, scrollToBonus },
 }) {
+  const [isImageLoaded, isImageLoadedChange] = useState(false);
+
   return (
     <>
       <Wrapper />
@@ -13,41 +16,46 @@ export default function FirstBloc({
             layout="fill"
             src="/images/programmer.jpg"
             alt="Programmation"
+            onLoad={() => {
+              isImageLoadedChange(true);
+            }}
           />
         </ImageWrapper>
-        <Title>
-          <h1>Matthieu Poupinet</h1>
-          <Row>
-            <p
-              onClick={() => {
-                scrollToAbout();
-              }}
-            >
-              A propos
-            </p>
-            <p
-              onClick={() => {
-                scrollToProjects();
-              }}
-            >
-              Projects
-            </p>
-            <p
-              onClick={() => {
-                scrollToContact();
-              }}
-            >
-              Contact
-            </p>
-            <p
-              onClick={() => {
-                scrollToBonus();
-              }}
-            >
-              Bonus
-            </p>
-          </Row>
-        </Title>
+        {isImageLoaded && (
+          <Title>
+            <h1>Matthieu Poupinet</h1>
+            <Row>
+              <p
+                onClick={() => {
+                  scrollToAbout();
+                }}
+              >
+                A propos
+              </p>
+              <p
+                onClick={() => {
+                  scrollToProjects();
+                }}
+              >
+                Projects
+              </p>
+              <p
+                onClick={() => {
+                  scrollToContact();
+                }}
+              >
+                Contact
+              </p>
+              <p
+                onClick={() => {
+                  scrollToBonus();
+                }}
+              >
+                Bonus
+              </p>
+            </Row>
+          </Title>
+        )}{" "}
       </TrueBloc>
     </>
   );
