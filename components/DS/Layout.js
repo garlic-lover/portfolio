@@ -5,7 +5,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import GlobalStyles from "./GlobalStyles";
 
-import Cursor from "./Cursor/index";
+// import Cursor from "./Cursor/index";
 
 export default function Layout({ children }) {
   const [theme, themeChange] = useState({
@@ -22,7 +22,7 @@ export default function Layout({ children }) {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Main data-scroll data-scroll-container id="stick">
-        <Cursor />
+        {/*  <Cursor /> */}
         <Header />
         <Container>{children}</Container>
         <Footer />
