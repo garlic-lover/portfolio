@@ -12,7 +12,7 @@ export default function ThirdPage({ theRef }) {
   return (
     <Wrapper ref={theRef}>
       <section>
-        <TrackVisibility once offset={400}>
+        <TrackVisibility once offset={600}>
           {({ isVisible }) => isVisible && <Contact />}
         </TrackVisibility>
       </section>

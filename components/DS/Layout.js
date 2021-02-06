@@ -45,7 +45,8 @@ to {
 const Main = styled.div`
   background-color: ${(props) => props.theme.background};
   color: ${(props) => props.theme.main};
-  animation: ${AppearAnim} 1.5s;
+  // animation: ${AppearAnim} 1.5s;
+  scroll-behavior: smooth;
 `;
 
 const Container = styled.div``;
