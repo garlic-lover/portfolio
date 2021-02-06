@@ -8,11 +8,14 @@ import useScrollTo from "@hooks/useScrollTo";
 
 import MenuBar from "../components/MenuBar";
 
+import Cursor from "../components/DS/Cursor";
+
 export default function HomePage() {
   const scroll = useScrollTo();
 
   return (
     <>
+      <Cursor />
       <MenuBar scroll={scroll} />
       <div>
         <FirstBloc scroll={scroll} />

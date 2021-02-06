@@ -1,9 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import SmallCursor from "./SmallCursor";
-import BigCursor from "./BigCursor";
+
+import dynamic from "next/dynamic";
+
+const BigCursor = dynamic(import("./BigCursor"));
 
 export default function Cursor() {
+  const [isLoaded, isLoadedChange] = useState(false);
   // set the starting position of the cursor outside of the screen
   const clientX = useRef(-100);
   const clientY = useRef(-100);
@@ -47,14 +51,22 @@ export default function Cursor() {
 
   return (
     <>
-      <SmallCursor clientX={clientX} clientY={clientY} />
-      <BigCursor
+      <SmallCursor
         clientX={clientX}
         clientY={clientY}
-        stuckX={stuckX}
-        stuckY={stuckY}
-        isStuck={isStuck}
+        onLoad={() => {
+          isLoadedChange(true);
+        }}
       />
+      {isLoaded && (
+        <BigCursor
+          clientX={clientX}
+          clientY={clientY}
+          stuckX={stuckX}
+          stuckY={stuckY}
+          isStuck={isStuck}
+        />
+      )}
     </>
   );
 }

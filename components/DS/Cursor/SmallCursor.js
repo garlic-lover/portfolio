@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 
-export default function SmallCursor({ clientX, clientY }) {
+export default function SmallCursor({ onLoad, clientX, clientY }) {
   const handleMouseMove = (e) => {
     clientX.current = e.clientX;
     clientY.current = e.clientY;
@@ -22,6 +22,7 @@ export default function SmallCursor({ clientX, clientY }) {
       requestAnimationFrame(render);
     };
     initCursor();
+    onLoad();
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
