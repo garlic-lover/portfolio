@@ -19,7 +19,7 @@ export default function BonusBloc({ theRef }) {
             <span className="lnr lnr-question-circle" />
           </Boop>
         </h2>
-        <TrackVisibility>
+        <TrackVisibility once>
           {({ isVisible }) => isVisible && <Bonus />}
         </TrackVisibility>
       </section>
