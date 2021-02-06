@@ -96,12 +96,17 @@ const ImageRow = styled.div`
     display: block;
     margin: auto;
     height: 60px;
-    width: auto;
+    width: 96px;
     display: block;
     margin-bottom: 48px;
   }
-  & a:last-child img {
+  & span:first-child img {
+    width: 64px;
+    margin-top: 5px;
+  }
+  & span:last-child img {
     height: 50px;
+    width: 50px;
     margin-top: 5px;
   }
 `;
