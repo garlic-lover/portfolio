@@ -1,6 +1,12 @@
 import styled from "styled-components";
+import TrackVisibility from "react-on-screen";
 
-import Bonus from "../Bonus";
+import dynamic from "next/dynamic";
+
+const Bonus = dynamic(import("../Bonus"), {
+  loading: () => <Loader>Loading...</Loader>,
+});
+
 import Boop from "../DS/Boop";
 
 export default function BonusBloc({ theRef }) {
@@ -13,11 +19,20 @@ export default function BonusBloc({ theRef }) {
             <span className="lnr lnr-question-circle" />
           </Boop>
         </h2>
-        <Bonus />
+        <TrackVisibility>
+          {({ isVisible }) => isVisible && <Bonus />}
+        </TrackVisibility>
       </section>
     </Wrapper>
   );
 }
+
+const Loader = styled.p`
+  color: ${(props) => props.theme.background};
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+`;
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.color3};

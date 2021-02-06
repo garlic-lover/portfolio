@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import { FFT, MembraneSynth, Sampler, Transport } from "tone";
 
 import Graphic from "./Graphic";
 import Instrument from "./Instrument";
