@@ -1,20 +1,31 @@
 import styled from "styled-components";
+import TrackVisibility from "react-on-screen";
 
 import dynamic from "next/dynamic";
 
 const Contact = dynamic(() => import("../Contact"), {
   ssr: false,
+  loading: () => <Loader>Loading...</Loader>,
 });
 
 export default function ThirdPage({ theRef }) {
   return (
     <Wrapper ref={theRef}>
       <section>
-        <Contact />
+        <TrackVisibility once offset={400}>
+          {({ isVisible }) => isVisible && <Contact />}
+        </TrackVisibility>
       </section>
     </Wrapper>
   );
 }
+
+const Loader = styled.p`
+  color: ${(props) => props.theme.background};
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+`;
 
 const Wrapper = styled.div`
   color: ${(props) => props.theme.main};
