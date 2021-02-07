@@ -89,7 +89,7 @@ const Wrapper = styled.div`
   align-items: center;
   border-radius: 7px;
   padding: 16px 24px;
-  background-color: rgba(255, 255, 255, 0.1);
+  // background-color: rgba(255, 255, 255, 0.1);
   color: ${(props) => props.theme.background};
   & select,
   & input {

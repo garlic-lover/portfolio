@@ -38,12 +38,12 @@ export default function Graphic({
         segmentsAmountRef.current,
         90
       );
-      polygon.current.strokeColor = "#f6f5f5";
+      polygon.current.strokeColor = "#624E39";
 
       // From the segments, create the circles
       for (const { point } of polygon.current.segments) {
         let newCircle = new scopeRef.current.Path.Circle(point, 10);
-        newCircle.strokeColor = "#f6f5f5";
+        newCircle.strokeColor = "#624E39";
         circlesArray.push(newCircle);
       }
       stepsCirclesFill();
@@ -54,7 +54,7 @@ export default function Graphic({
       let index = 0;
       for (const circle of circlesArray) {
         if (steps.current.indexOf(index) !== -1) {
-          circle.fillColor = "lightblue";
+          circle.fillColor = "#624E39";
         } else {
           circle.fillColor = "transparent";
         }
@@ -96,7 +96,7 @@ export default function Graphic({
 const Wrapper = styled.canvas`
   width: 240px;
   height: 240px;
-  background-color: rgba(255, 255, 255, 0.15);
+  //background-color: rgba(255, 255, 255, 0.15);
   border-radius: 7px;
   margin: auto;
   display: block;
