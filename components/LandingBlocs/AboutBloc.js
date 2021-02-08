@@ -49,6 +49,7 @@ const Wrapper = styled.div`
       flex-direction: column;
     }
     text-align: center;
+    padding-bottom: 120px;
   }
 `;
 
@@ -73,5 +74,15 @@ const Bonus = styled.div`
   }
   & span {
     margin-left: 4px;
+  }
+  @media (max-width: 680px) {
+    flex-direction: column;
+    bottom: 20px;
+    & p {
+      line-height: 24px;
+    }
+    & p:last-child {
+      margin-top: 12px;
+    }
   }
 `;

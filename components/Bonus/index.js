@@ -54,4 +54,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
   margin-bottom: 12px;
+  @media (max-width: 680px) {
+    flex-direction: column;
+  }
 `;

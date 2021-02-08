@@ -36,7 +36,9 @@ export default function FirstBloc({ theRef }) {
 const Wrapper = styled.div`
   color: ${(props) => props.theme.color};
   background-color: ${(props) => props.theme.background};
-  height: 100vh;
+  min-height: 100vh;
+  padding-top: 60px;
+  padding-bottom: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,4 +57,8 @@ const List = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 16px;
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 24px;
+  }
 `;

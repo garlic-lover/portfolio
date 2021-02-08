@@ -37,7 +37,8 @@ const Loader = styled.p`
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.color3};
   color: ${(props) => props.theme.background};
-  height: calc(100vh - 160px);
+  min-height: calc(100vh - 160px);
+  padding-bottom: 60px;
   position: relative;
   z-index: 10;
   & section {
@@ -54,5 +55,13 @@ const Wrapper = styled.div`
     position: relative;
     top: -3px;
     font-size: 24px;
+  }
+  @media (max-width: 680px) {
+    & h2 {
+      font-size: 1.2rem;
+    }
+    & h2 span {
+      font-size: 18px;
+    }
   }
 `;

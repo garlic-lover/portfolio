@@ -79,8 +79,11 @@ const TrueBloc = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // flex-direction: column;
   z-index: 2;
+  @media (max-width: 680px) {
+    flex-direction: column;
+    width: 94%;
+  }
 `;
 
 const Title = styled.div`
@@ -104,10 +107,10 @@ const Title = styled.div`
     font-size: 1.8rem;
     line-height: 3rem;
     margin-bottom: -176px;
+    width: 100%;
     & h1 {
       text-align: center;
       font-size: 1.6rem;
-      width: 90%;
     }
   }
 `;
@@ -135,13 +138,16 @@ const Row = styled.div`
   @media (max-width: 680px) {
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 100%;
     margin-top: 24px;
-    & a {
+    & p {
       margin-left: 0;
-      margin-bottom: 32px;
+      margin-bottom: 16px;
       width: 100%;
       font-size: 18px;
+    }
+    & p:last-child {
+      margin-bottom: 32px;
     }
   }
 `;
@@ -168,6 +174,9 @@ const ImageWrapper = styled.div`
   & img {
     object-fit: cover;
     animation: ${Appear} 3s;
+  }
+  @media (max-width: 680px) {
+    display: none;
   }
 `;
 
