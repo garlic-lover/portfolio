@@ -4,7 +4,7 @@ import TrackVisibility from "react-on-screen";
 import dynamic from "next/dynamic";
 
 const Bonus = dynamic(import("../Bonus"), {
-  loading: () => <Loader>Loading...</Loader>,
+  loading: () => <Loader src="/loader.svg" />,
 });
 
 import Boop from "../DS/Boop";
@@ -27,17 +27,19 @@ export default function BonusBloc({ theRef }) {
   );
 }
 
-const Loader = styled.p`
+const Loader = styled.img`
   color: ${(props) => props.theme.background};
   font-size: 1.5rem;
-  text-align: center;
-  margin-top: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.color3};
   color: ${(props) => props.theme.background};
-  min-height: calc(100vh - 160px);
+  padding-top: 60px;
   padding-bottom: 60px;
   position: relative;
   z-index: 10;

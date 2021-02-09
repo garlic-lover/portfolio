@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Transport } from "tone";
 
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import Machine from "./Machine";
 import Resetter from "./Resetter";
@@ -50,10 +50,20 @@ export default function Bonus() {
   );
 }
 
+const BonusAppear = keyframes`
+  from{
+    opacity :0
+  }
+  to{
+    opacity :1
+  }
+`;
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
   margin-bottom: 12px;
+  animation: ${BonusAppear} 2s;
   @media (max-width: 680px) {
     flex-direction: column;
   }
