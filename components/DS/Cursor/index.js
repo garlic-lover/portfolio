@@ -3,10 +3,13 @@ import { useState, useEffect, useRef } from "react";
 import SmallCursor from "./SmallCursor";
 
 import dynamic from "next/dynamic";
-
 const BigCursor = dynamic(import("./BigCursor"));
 
+import useWindowSize from "../../../hooks/useWindowSize";
+
 export default function Cursor() {
+  const { width } = useWindowSize();
+
   const [isLoaded, isLoadedChange] = useState(false);
   // set the starting position of the cursor outside of the screen
   const clientX = useRef(-100);
@@ -48,6 +51,10 @@ export default function Cursor() {
       });
     };
   }, []);
+
+  if (width < 680) {
+    return null;
+  }
 
   return (
     <>

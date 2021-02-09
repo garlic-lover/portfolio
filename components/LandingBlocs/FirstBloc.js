@@ -2,10 +2,13 @@ import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 
+import useWindowSize from "../../hooks/useWindowSize";
+
 export default function FirstBloc({
   scroll: { scrollToAbout, scrollToProjects, scrollToContact, scrollToBonus },
 }) {
   const [isImageLoaded, isImageLoadedChange] = useState(false);
+  const { width } = useWindowSize();
 
   return (
     <>
@@ -21,7 +24,7 @@ export default function FirstBloc({
             }}
           />
         </ImageWrapper>
-        {isImageLoaded && (
+        {(isImageLoaded || width < 680) && (
           <Title>
             <h1>Matthieu Poupinet</h1>
             <Row>

@@ -34,6 +34,7 @@ const GlobalStyles = createGlobalStyle`
     & select{
         padding : 3px
     }
+    @media(max-width : 680px){}
  `;
 
 export default GlobalStyles;
