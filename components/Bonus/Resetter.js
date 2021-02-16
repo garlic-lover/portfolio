@@ -32,4 +32,12 @@ export default function Resetter({ globalCurrentStep }) {
   );
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  margin-right: 24px;
+  & input {
+    border-radius: 0;
+    color: ${(props) => props.theme.background};
+
+    border: solid 1px ${(props) => props.theme.background};
+  }
+`;

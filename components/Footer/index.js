@@ -24,6 +24,7 @@ export default function Footer() {
         <h3>Packages utilisés</h3>
         <p>Paper.js</p>
         <p>simplex-noise.js</p>
+        <p>Tone.js</p>
       </div>
     </Wrapper>
   );

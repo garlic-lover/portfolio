@@ -38,7 +38,7 @@ export default function Graphic({
         segmentsAmountRef.current,
         90
       );
-      polygon.current.strokeColor = "#624E39";
+      // polygon.current.strokeColor = "#624E39";
 
       // From the segments, create the circles
       for (const { point } of polygon.current.segments) {

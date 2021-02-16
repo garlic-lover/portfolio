@@ -33,7 +33,7 @@ const Loader = styled.img`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -25%);
 `;
 
 const Wrapper = styled.div`
@@ -42,6 +42,7 @@ const Wrapper = styled.div`
   padding-top: 60px;
   padding-bottom: 60px;
   position: relative;
+  min-height: 80vh;
   z-index: 10;
   & section {
     width: 84%;

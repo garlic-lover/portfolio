@@ -89,9 +89,8 @@ export default function Instrument({
 
 const Wrapper = styled.div`
   margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  & select {
-    margin-left: 8px;
+  width: 50%;
+  & h4 {
+    margin-bottom: 8px;
   }
 `;
