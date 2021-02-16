@@ -13,11 +13,10 @@ import useScrollTo from "@hooks/useScrollTo";
 import MenuBar from "../components/MenuBar";
 import Cursor from "../components/DS/Cursor";
 
-import Switch from "../components/DS/Switch";
 import { useState } from "react";
 
 export default function HomePage() {
-  const [value, valueChange] = useState();
+  const [openedPage, openedPageChange] = useState(null);
   const scroll = useScrollTo();
 
   return (
@@ -25,20 +24,20 @@ export default function HomePage() {
       <Cursor />
       <MenuBar scroll={scroll} />
       <Wrapper>
-        <Main isDisplayed={value}>
+        <Main isDisplayed={openedPage !== null}>
           <FirstBloc scroll={scroll} />
           <AboutBloc
             theRef={scroll.aboutRef}
             scrollToBonus={scroll.scrollToBonus}
           />
-          <ProjectsBloc theRef={scroll.projectsRef} />
+          <ProjectsBloc
+            theRef={scroll.projectsRef}
+            openedPageChange={openedPageChange}
+          />
           <ContactBloc theRef={scroll.contactRef} />
           <BonusBloc theRef={scroll.bonusRef} />
         </Main>
-        <Page isDisplayed={value} />
-        <SwitchWrapper>
-          <Switch value={value} valueChange={valueChange} />
-        </SwitchWrapper>
+        <Page isDisplayed={openedPage !== null} />
       </Wrapper>
     </>
   );
@@ -55,11 +54,4 @@ const Main = styled.div`
   position: relative;
   left: 0;
   transform: ${(props) => (props.isDisplayed ? "translateX(-100%)" : "")};
-`;
-
-const SwitchWrapper = styled.div`
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
-  z-index: 100;
 `;
