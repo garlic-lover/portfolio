@@ -5,7 +5,13 @@ import Header from "../Header";
 import Footer from "../Footer";
 import GlobalStyles from "./GlobalStyles";
 
+import useAppContext from "@hooks/useAppContext";
+
 export default function Layout({ children }) {
+  const {
+    state: { openedPage },
+  } = useAppContext();
+
   const [theme, themeChange] = useState({
     background: "#f6f5f5",
     main: "#1687a7",
@@ -15,7 +21,7 @@ export default function Layout({ children }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
+      <GlobalStyles openedPage={openedPage} />
       <Main data-scroll data-scroll-container id="stick">
         <Header />
         <Container>{children}</Container>

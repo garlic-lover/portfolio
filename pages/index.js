@@ -9,15 +9,22 @@ import BonusBloc from "../components/LandingBlocs/BonusBloc";
 import Page from "../components/Projects/Page";
 
 import useScrollTo from "@hooks/useScrollTo";
+import useAppContext from "@hooks/useAppContext";
 
 import MenuBar from "../components/MenuBar";
 import Cursor from "../components/DS/Cursor";
 
-import { useState } from "react";
-
 export default function HomePage() {
-  const [openedPage, openedPageChange] = useState(null);
+  const {
+    state: { openedPage },
+    dispatch,
+  } = useAppContext();
+
   const scroll = useScrollTo();
+
+  function openedPageChange(value) {
+    dispatch({ type: "openedPageChange", openedPage: value });
+  }
 
   return (
     <>

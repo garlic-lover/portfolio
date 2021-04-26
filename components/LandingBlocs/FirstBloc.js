@@ -99,12 +99,14 @@ const Title = styled.div`
   flex-direction: column;
   width: 40%;
   & h1 {
-    font-size: 2rem;
-    font-weight: 200;
+    font-size: 6rem;
+    font-weight: 100;
+    line-height: 1.3;
     letter-spacing: 6px;
     display: flex;
     align-items: center;
     margin-bottom: 24px;
+    font-family: Ranade-Variable;
   }
   @media (max-width: 680px) {
     font-size: 1.8rem;
