@@ -46,7 +46,10 @@ export default function HomePage() {
           <ContactBloc theRef={scroll.contactRef} />
           {/* <BonusBloc theRef={scroll.bonusRef} /> */}
         </Main>
-        <Page isDisplayed={openedPage !== null} />
+        <Page
+          isDisplayed={openedPage !== null}
+          close={() => openedPageChange(null)}
+        />
       </Wrapper>
     </>
   );
