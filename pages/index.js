@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-//import FirstBloc from "../components/LandingBlocs/FirstBloc";
+import FirstBloc from "../components/LandingBlocs/FirstBloc";
 import FirstBlocBis from "../components/LandingBlocs/FirstBlocBis";
 import AboutBloc from "../components/LandingBlocs/AboutBloc";
 import ContactBloc from "../components/LandingBlocs/ContactBloc";

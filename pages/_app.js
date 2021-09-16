@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="icon" href="https://emojipedia.org/nerd-face/" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <AppContextProvider>
         <Layout>

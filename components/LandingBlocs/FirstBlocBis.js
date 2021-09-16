@@ -1,11 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import CircleType from "circletype";
 import { useEffect } from "react";
 
 export default function FirstBloc() {
   useEffect(() => {
-    const circleType = new CircleType(document.getElementById("roundedText"));
-    circleType.dir();
+    async function circleFormat() {
+      const circleType = await new CircleType(
+        document.getElementById("roundedText")
+      );
+      circleType.dir(1);
+    }
+    circleFormat();
   }, []);
 
   return (
@@ -15,7 +20,9 @@ export default function FirstBloc() {
         <h2>Web & Mobile delopper</h2>
         <p>Lean, transparency, no bullsh*t</p>
       </StickyPart>
-      <RoundText id="roundedText"> Contact me · Contact me · </RoundText>
+      <RoundText onClick={() => alert("hey")}>
+        <p id="roundedText"> Contact me · Contact me · </p>
+      </RoundText>
     </Wrapper>
   );
 }
@@ -56,12 +63,23 @@ const StickyPart = styled.div`
   border-radius: 100px;
 `;
 
+const RotationAnimation = keyframes`
+from {
+  transform: rotate(0deg);
+}
+to {
+  transform: rotate(359deg);
+}
+`;
+
 const RoundText = styled.div`
   position: absolute;
-  right: 64px;
-  bottom: 112px;
+  right: 32px;
+  bottom: 32px;
   color: white;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  animation: ${RotationAnimation} 16s infinite linear;
+  letter-spacing: 2px;
+  width: 120px;
+  height: 120px;
 `;
