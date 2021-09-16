@@ -2,6 +2,8 @@ import "../styles/globals.css";
 import "../styles/linear_icons.css";
 import "../styles/ranade.css";
 
+import Head from "next/head";
+
 import { usePleaseStay } from "react-use-please-stay";
 
 import Layout from "../components/DS/Layout";
@@ -11,11 +13,16 @@ function MyApp({ Component, pageProps }) {
   usePleaseStay({ titles: ["Hey it's Mat!", "Contact me"] });
 
   return (
-    <AppContextProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </AppContextProvider>
+    <>
+      <Head>
+        <link rel="icon" href="https://emojipedia.org/nerd-face/" />
+      </Head>
+      <AppContextProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </AppContextProvider>
+    </>
   );
 }
 

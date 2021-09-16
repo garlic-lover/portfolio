@@ -26,7 +26,7 @@ export default function FirstBloc({
         </ImageWrapper>
         {(isImageLoaded || width < 680) && (
           <Title>
-            <h1>Matthieu Poupinet</h1>
+            <h1>Mon portfolio</h1>
             <Row>
               <p
                 onClick={() => {
@@ -40,7 +40,7 @@ export default function FirstBloc({
                   scrollToProjects();
                 }}
               >
-                Projects
+                Projets
               </p>
               <p
                 onClick={() => {
@@ -58,7 +58,7 @@ export default function FirstBloc({
               </p>
             </Row>
           </Title>
-        )}{" "}
+        )}
       </TrueBloc>
     </>
   );
@@ -97,16 +97,21 @@ const Title = styled.div`
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 40%;
   & h1 {
-    font-size: 6rem;
+    font-size: 2rem;
     font-weight: 100;
     line-height: 1.3;
     letter-spacing: 6px;
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-bottom: 24px;
     font-family: Ranade-Variable;
+    border-bottom: solid 1px #1687a7;
+    padding-bottom: 12px;
+    width: fit-content;
   }
   @media (max-width: 680px) {
     font-size: 1.8rem;
@@ -122,6 +127,7 @@ const Title = styled.div`
 
 const Row = styled.div`
   display: flex;
+  justify-content: center;
   margin-top: 2px;
   & p {
     transition: ease 0.3s;

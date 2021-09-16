@@ -19,6 +19,20 @@ export default function Layout({ children }) {
     color3: "#276678",
   });
 
+  /* 
+   background: "#DDDDDD",
+    main: "#125D98",
+    color2: "#3C8DAD",
+    color3: "#F5A962",
+  
+  */
+
+  /* 
+  
+   
+  
+  */
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles openedPage={openedPage} />

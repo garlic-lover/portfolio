@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function Prestations() {
   return (
     <Bloc>
-      <h3>Ce que je fais</h3>
+      <h3>What I do</h3>
       <p>
         <span>Web app' :</span> Envie de développer des services en ligne ?
         C'est une application web qu'il vous faut.

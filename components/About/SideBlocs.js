@@ -6,7 +6,7 @@ export default function Side() {
   return (
     <SideBlocs>
       <Bloc>
-        <h3>Formation</h3>
+        <h3>Education</h3>
         <ImageRow>
           <Boop>
             <a
@@ -41,7 +41,7 @@ export default function Side() {
         </ImageRow>
       </Bloc>
       <Bloc>
-        <h3>Compétences</h3>
+        <h3>Skills</h3>
         <p>
           Développeur Web et Mobile <span>fullstack</span>, je me suis
           spécialisé notamment sur les technologies autour des environnements de

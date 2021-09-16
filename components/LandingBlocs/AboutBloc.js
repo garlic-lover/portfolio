@@ -28,6 +28,7 @@ export default function AboutBloc({ theRef, scrollToBonus }) {
 const Wrapper = styled.div`
   color: ${(props) => props.theme.color};
   background-color: ${(props) => props.theme.color2};
+  background: white;
   min-height: calc(100vh - 160px);
   padding: 80px 0;
   display: flex;

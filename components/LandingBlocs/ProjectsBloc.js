@@ -35,7 +35,7 @@ const data = [
 export default function FirstBloc({ theRef, openedPageChange }) {
   return (
     <Wrapper ref={theRef}>
-      <h2>Examples</h2>
+      <h2>Selected projects</h2>
       <List>
         {data.map(({ title, description, tags, previewPicture }, index) => {
           return (

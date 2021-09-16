@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-import FirstBloc from "../components/LandingBlocs/FirstBloc";
+//import FirstBloc from "../components/LandingBlocs/FirstBloc";
+import FirstBlocBis from "../components/LandingBlocs/FirstBlocBis";
 import AboutBloc from "../components/LandingBlocs/AboutBloc";
 import ContactBloc from "../components/LandingBlocs/ContactBloc";
 import ProjectsBloc from "../components/LandingBlocs/ProjectsBloc";
-import BonusBloc from "../components/LandingBlocs/BonusBloc";
+//import BonusBloc from "../components/LandingBlocs/BonusBloc";
 
 import Page from "../components/Projects/Page";
 
@@ -32,7 +33,8 @@ export default function HomePage() {
       <MenuBar scroll={scroll} />
       <Wrapper>
         <Main isDisplayed={openedPage !== null}>
-          <FirstBloc scroll={scroll} />
+          <FirstBlocBis scroll={scroll} />
+          {/* <FirstBloc scroll={scroll} /> */}
           <AboutBloc
             theRef={scroll.aboutRef}
             scrollToBonus={scroll.scrollToBonus}
@@ -42,7 +44,7 @@ export default function HomePage() {
             openedPageChange={openedPageChange}
           />
           <ContactBloc theRef={scroll.contactRef} />
-          <BonusBloc theRef={scroll.bonusRef} />
+          {/* <BonusBloc theRef={scroll.bonusRef} /> */}
         </Main>
         <Page isDisplayed={openedPage !== null} />
       </Wrapper>
