@@ -18,8 +18,11 @@ export default function FirstBloc() {
       <StickyPart>
         <h1>Matthieu Poupinet</h1>
         <h2>Web & Mobile delopper</h2>
-        <p>Lean, transparency, no bullsh*t</p>
+        <p>
+          Based in Alençon, <strong>Normandy</strong>
+        </p>
       </StickyPart>
+      <Description>Freelancer working full-remote</Description>
       <RoundText onClick={() => alert("hey")}>
         <p id="roundedText"> Contact me · Contact me · </p>
       </RoundText>
@@ -39,7 +42,7 @@ const Wrapper = styled.div`
   position: relative;
   & h1 {
     font-size: 1.5rem;
-    margin-bottom: 0px;
+    margin-bottom: 6px;
   }
   & h2 {
     font-size: 4rem;
@@ -50,6 +53,10 @@ const Wrapper = styled.div`
   }
   & p {
     text-align: right;
+    font-size: 1.2rem;
+  }
+  & strong {
+    color: orange;
   }
 `;
 
@@ -59,8 +66,15 @@ const StickyPart = styled.div`
   transform: translateY(-50%);
   z-index: 100;
   background: white;
-  padding: 20px 50px;
+  padding: 20px 60px;
   border-radius: 100px;
+`;
+
+const Description = styled.div`
+  position: absolute;
+  bottom: 24px;
+  font-size: 1.4rem;
+  line-height: 1.5;
 `;
 
 const RotationAnimation = keyframes`
