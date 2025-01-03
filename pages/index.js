@@ -30,26 +30,26 @@ export default function HomePage() {
   return (
     <>
       <Cursor />
-      <MenuBar scroll={scroll} />
+      {/*   <MenuBar scroll={scroll} /> */}
       <Wrapper>
         <Main isDisplayed={openedPage !== null}>
           <FirstBlocBis scroll={scroll} />
           {/* <FirstBloc scroll={scroll} /> */}
-          <AboutBloc
+          {/*    <AboutBloc
             theRef={scroll.aboutRef}
             scrollToBonus={scroll.scrollToBonus}
           />
           <ProjectsBloc
             theRef={scroll.projectsRef}
             openedPageChange={openedPageChange}
-          />
-          <ContactBloc theRef={scroll.contactRef} />
+          /> */}
+          {/*    <ContactBloc theRef={scroll.contactRef} /> */}
           {/* <BonusBloc theRef={scroll.bonusRef} /> */}
         </Main>
-        <Page
+        {/*   <Page
           isDisplayed={openedPage !== null}
           close={() => openedPageChange(null)}
-        />
+        /> */}
       </Wrapper>
     </>
   );

@@ -1,8 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
+import { Raleway, Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ display: "swap", subsets: ["latin"] });
+const raleway = Raleway({ display: "swap", subsets: ["latin"] });
+
 const GlobalStyles = createGlobalStyle`
     body {
-    font-family: Raleway;
+    font-family: ${raleway.style.fontFamily};
     font-weight : 200;
     overflow-x: hidden !important;
     overflow : ${(props) => (props.openedPage ? "hidden" : "auto")};
@@ -12,10 +17,10 @@ const GlobalStyles = createGlobalStyle`
     }
     }
     h1{
-        font-family: Renade-Variable;
+        font-family: ${montserrat.style.fontFamily};  
     }
      h2, h3, h4, h5, h6{
-        font-family: Montserrat;    
+        font-family: ${raleway.style.fontFamily};    
         font-weight : 800;
         letter-spacing: 2px
     }

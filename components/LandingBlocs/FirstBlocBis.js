@@ -22,8 +22,8 @@ export default function FirstBloc() {
           Based in Alençon, <strong>Normandy</strong>
         </p>
       </StickyPart>
-      <Description>Freelancer working full-remote</Description>
-      <RoundText onClick={() => alert("hey")}>
+      <Description>👷 Work in progress 🚧</Description>
+      <RoundText href="mailto:matthieupoupinet@gmail.com">
         <p id="roundedText"> Contact me · Contact me · </p>
       </RoundText>
     </Wrapper>
@@ -86,7 +86,7 @@ to {
 }
 `;
 
-const RoundText = styled.div`
+const RoundText = styled.a`
   position: absolute;
   right: 32px;
   bottom: 32px;
@@ -96,4 +96,5 @@ const RoundText = styled.div`
   letter-spacing: 2px;
   width: 120px;
   height: 120px;
+  cursor: pointer;
 `;
